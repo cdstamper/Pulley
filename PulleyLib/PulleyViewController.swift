@@ -792,7 +792,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         drawerScrollView.isScrollEnabled = allowsUserDrawerPositionChange && supportedPositions.count > 1
     }
     
-    private func getBottomSafeArea() -> CGFloat {
+    fileprivate func getBottomSafeArea() -> CGFloat {
         
         let safeAreaBottomInset: CGFloat
         
@@ -808,7 +808,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         return safeAreaBottomInset
     }
 
-    private func getLeftSafeArea() -> CGFloat {
+    fileprivate func getLeftSafeArea() -> CGFloat {
 
         var safeAreaLeftInset: CGFloat = 0
 
@@ -820,7 +820,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         return safeAreaLeftInset
     }
 
-    private func getRightSafeArea() -> CGFloat {
+    fileprivate func getRightSafeArea() -> CGFloat {
 
         var safeAreaRightInset: CGFloat = 0
 
@@ -835,7 +835,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
     /**
      Mask backgroundDimmingView layer to avoid drawer background beeing darkened.
      */
-    private func maskBackgroundDimmingView() {
+    fileprivate func maskBackgroundDimmingView() {
         
         let cutoutHeight = 2 * drawerCornerRadius
         let maskHeight = backgroundDimmingView.bounds.size.height - cutoutHeight - drawerScrollView.contentSize.height
@@ -861,7 +861,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
      
      - returns: a frame for moving backgroundDimmingView according to drawer position
      */
-    private func backgroundDimmingViewFrameForDrawerPosition(_ drawerPosition: CGFloat) -> CGRect {
+    fileprivate func backgroundDimmingViewFrameForDrawerPosition(_ drawerPosition: CGFloat) -> CGRect {
         let cutoutHeight = (2 * drawerCornerRadius)
         var backgroundDimmingViewFrame = backgroundDimmingView.frame
         backgroundDimmingViewFrame.origin.y = 0 - drawerPosition + cutoutHeight
@@ -869,7 +869,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         return backgroundDimmingViewFrame
     }
     
-    private func syncDrawerContentViewSizeToMatchScrollPositionForSideDisplayMode() {
+    fileprivate func syncDrawerContentViewSizeToMatchScrollPositionForSideDisplayMode() {
         
         guard currentDisplayMode == .leftSide else {
             return
